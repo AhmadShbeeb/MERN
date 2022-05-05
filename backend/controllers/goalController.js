@@ -49,7 +49,7 @@ const updateGoal = asyncHandler(async (req, res) => {
   // make sure the logged in user matches the goal user
   if (goal.user.toString() !== user.id) {
     res.status(401)
-    throw new Error('User not autorized')
+    throw new Error('User not authorized')
   }
 
   const updatedGoal = await Goal.findByIdAndUpdate(req.params.id, req.body, { new: true }) // new: true => to add it if not found // findByIdAndUpdate won't pass through validation if there is any so u should use .findById().save()
@@ -74,7 +74,7 @@ const deleteGoal = asyncHandler(async (req, res) => {
   // make sure the logged in user matches the goal user
   if (goal.user.toString() !== user.id) {
     res.status(401)
-    throw new Error('User not autorized')
+    throw new Error('User not authorized')
   }
   await goal.remove()
   res.status(200).json({ id: req.params.id })
