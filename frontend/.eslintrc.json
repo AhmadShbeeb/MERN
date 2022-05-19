@@ -1,5 +1,6 @@
 {
-  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "root": true,
+  "extends": ["airbnb", "prettier", "react-app", "react-app/jest"],
   "plugins": ["prettier", "react-hooks", "html"],
   "rules": {
     "prettier/prettier": "warn",
@@ -102,6 +103,5 @@
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/comma-dangle": ["off"],
     "react/jsx-props-no-spreading": "off"
-  },
-  "root": true
+  }
 }
