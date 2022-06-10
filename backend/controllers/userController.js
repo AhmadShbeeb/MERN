@@ -70,8 +70,9 @@ const loginUser = asyncHandler(async (req, res) => {
 })
 
 const getMe = asyncHandler(async (req, res) => {
-  const { _id, name, email } = await User.findById(req.user.id) // we've set req.user in authMiddleware
-  res.status(200).json({ id: _id, name, email })
+  // const { _id, name, email } = await User.findById(req.user.id) // we've set req.user in authMiddleware
+  // res.status(200).json({ id: _id, name, email })
+  res.status(200).json(req.user)
 })
 
 module.exports = {
