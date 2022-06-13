@@ -12,15 +12,15 @@ function Login() {
     password: '',
   })
   const { email, password } = formData
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user, isLoading, isSuccess, isError, message } = useSelector(state => state.auth)
 
   useEffect(() => {
     if (isError) toast.error(message)
-    if (isSuccess || user) navigate('/')
 
-    dispatch(reset())
+    if (isSuccess || user) navigate('/')
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
   const onChange = e => {
