@@ -17,7 +17,7 @@ function Dashboard() {
       navigate('/login')
     } else {
       dispatch(getGoals()) // this will put it in goals selector above
-      if (isError) console.log(message)
+      if (isError) console.error(message)
       // when leaving the dashboard
       // to reset goals when component UNMOUNT => return something from useEffect
       return () => {
