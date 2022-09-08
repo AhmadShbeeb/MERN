@@ -4,12 +4,12 @@
   "description": "Goalsetter",
   "main": "server.js",
   "scripts": {
-    "prestart": "npm install --prefix frontend && npm run build --prefix frontend",
     "start": "node backend/server.js",
     "lint": "eslint --fix --ext .js,.jsx .",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prebuild": "npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Ahmad",
   "license": "MIT",
