@@ -7,6 +7,7 @@ const connectDB = require('./config/db')
 
 const port = process.env.PORT || 5000
 console.log(`/////SERVER:${process.env.MONGO_URI}`)
+console.log(`/////SERVER:${process.env.NODE_ENV}`)
 connectDB()
 const app = express()
 
