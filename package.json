@@ -4,7 +4,7 @@
   "description": "Goalsetter",
   "main": "server.js",
   "scripts": {
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend && npm run start --prefix frontend && node backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend && node backend/server.js",
     "start": "node backend/server.js",
     "lint": "eslint --fix --ext .js,.jsx .",
     "server": "nodemon backend/server.js",
