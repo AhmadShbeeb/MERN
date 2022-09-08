@@ -4,8 +4,8 @@
   "description": "Goalsetter",
   "main": "server.js",
   "scripts": {
-    "build": "npm install",
-    "postbuild": "npm install --prefix frontend && npm run build --prefix frontend",
+    "build": "npm install && npm prune && zip",
+    "postbuild": "npm install --prefix frontend && npm prune && zip && npm run build --prefix frontend",
     "start": "node backend/server.js",
     "lint": "eslint --fix --ext .js,.jsx .",
     "server": "nodemon backend/server.js",
