@@ -1,4 +1,6 @@
 const path = require('path')
+const fs = require('fs')
+
 require('dotenv').config()
 require('colors')
 const express = require('express')
@@ -7,6 +9,10 @@ const connectDB = require('./config/db')
 
 console.log(`/////SERVER: ${path.join(__dirname, '../frontend/build')}`)
 console.log(`/////SERVER: ${path.resolve(__dirname, '../', 'frontend')}`)
+
+fs.readdirSync(path.resolve(__dirname, '../', 'frontend')).forEach(file => {
+  console.log(file)
+})
 
 const port = process.env.PORT || 5000
 connectDB()
@@ -24,6 +30,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build'))) // set static assets folder
   // resolve: is the result of executing cd with each argument
   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build', 'index.html'))) // * for all routes except the api routes to point to index.html
+  // app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../frontend/build/index.html'))) // * for all routes except the api routes to point to index.html
 } else {
   app.get('/', (req, res) => res.send('Please set to production'))
 }
