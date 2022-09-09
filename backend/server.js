@@ -1,18 +1,9 @@
 const path = require('path')
-const fs = require('fs')
-
 require('dotenv').config()
 require('colors')
 const express = require('express')
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
-
-console.log(`/////SERVER: ${path.join(__dirname, '../frontend/build')}`)
-console.log(`/////SERVER: ${path.resolve(__dirname, '../', 'frontend')}`)
-
-fs.readdirSync(path.resolve(__dirname, '../', 'frontend')).forEach(file => {
-  console.log(file)
-})
 
 const port = process.env.PORT || 5000
 connectDB()
