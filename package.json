@@ -4,8 +4,7 @@
   "description": "Goalsetter",
   "main": "server.js",
   "scripts": {
-    "postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "node backend/server.js",
+    "start": "node backend/server.js && npm install --prefix frontend && npm run build --prefix frontend",
     "lint": "eslint --fix --ext .js,.jsx .",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
