@@ -5,6 +5,9 @@ const express = require('express')
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
 
+console.log(`/////SERVER: ${path.join(__dirname, '../frontend/build')}`)
+console.log(`/////SERVER: ${path.resolve(__dirname, '../', 'frontend')}`)
+
 const port = process.env.PORT || 5000
 connectDB()
 const app = express()
